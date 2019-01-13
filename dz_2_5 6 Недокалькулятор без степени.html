@@ -1,0 +1,78 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+/*Реализовать четыре основные арифметические операции в виде функций с двумя параметрами. 
+Обязательно использовать оператор return.*/
+function testCorrectEnter(answer){
+	while (isNaN(answer)){
+		answer=+prompt("Введите цифрами.");
+	}
+	return answer;
+}
+
+function add(a,b){
+	return a+b;
+}
+function minus(a,b){
+	return a-b;
+}
+function divide(a,b){
+	return a/b;
+}
+function multiply(a,b){
+	return a*b;
+}
+
+var a=+prompt("Введите первое число:");
+	a=testCorrectEnter(a);
+var b=+prompt("Введите второе число:");
+	b=testCorrectEnter(b);
+
+var summa=add(a,b);
+var difference=minus(a,b);
+var product=multiply(a,b);
+var div=divide(a,b);
+
+alert("Сумма "+ a + " + " + b + " = " + summa +
+	  ".\nРазница "+ a + " - " + b + " = " + difference +
+	  ".\nПроизведение " + a + " * " + b + " = " + product +
+	  ".\nЧастное "+ a + "/" + b + " = " + div);
+
+/*Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 — значения аргументов, operation — строка с названием операции. 
+В зависимости от переданного значения выполнить одну из арифметических операций (использовать функции из пункта 3) и вернуть полученное значение (применить switch).*/
+
+function mathOperation(a, b, operation){
+	switch(operation){
+		case (1):
+			itog = add(a,b);
+			break;
+		case (2):
+			itog = minus(a,b);
+			break;
+		case (3):
+			itog = multiply(a,b);
+			break;
+		case (4):
+			itog = divide(a,b);
+			break;
+		default:
+			itog="Вы неверно ввели номер операции";
+	}
+	return itog;
+}
+
+var a=+prompt("Задача 6.\nВведите еще раз любое число:");
+	a=testCorrectEnter(a);
+var b=+prompt("Введите еще раз второе число:");
+	b=testCorrectEnter(b);
+var operation = +prompt("Укажите операцию по номеру:\n1-сложение\n2-вычитание\n3-умножение\n4-деление")
+	operation=testCorrectEnter(operation);
+
+var itog = mathOperation(a,b,operation);
+alert("Вы ввели следующие значения: "+ 
+	  a + ", " + b + ", " + operation + 
+	  ".\nРезультат: " + itog);
+
+
+
+</script> 

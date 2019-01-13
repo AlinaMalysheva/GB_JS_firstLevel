@@ -1,0 +1,22 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+/* С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val, pow), где val — заданное число, pow –— степень.
+*/
+function power(val,pow){
+	if(pow==1) {
+		return val;
+	}
+	else {
+		pow=pow-1;
+		val= val*power(val,pow);
+		return val;
+	}
+}
+
+var val=+prompt("Введите число ЦИФРАМИ. Мне лень вставлять проверку");
+var pow=+prompt("Введите степень ЦИФРАМИ.");
+var itog= power(val,pow);
+alert(val + " в степени " + pow + " будет равно " + itog);
+
+</script> 
