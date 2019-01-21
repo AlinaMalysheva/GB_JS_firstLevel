@@ -1,0 +1,41 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+var theRandomNumber = Math.round(Math.random()*100);
+var tryCount=0;
+var repeat=1;
+
+function testCorrectEnter(answer){
+	while (isNaN(answer)){
+		answer=+prompt("Введите цифрами число от 0 до 100.");
+	}
+	return answer;
+}
+
+while (repeat!=0){
+	var answer = +prompt("Я загадал число от 0 до 100. \nПопробуй угадай.");
+	testCorrectEnter(answer);
+
+	do {
+		tryCount++;
+		if (answer>theRandomNumber){
+			answer=+prompt("Вы ввели слишком большое число.\nВведите меньшее число.");
+			testCorrectEnter(answer);
+		}
+		else {
+			answer=+prompt("Вы ввели слишком маленькое число.\nВведите большее число.");
+			testCorrectEnter(answer);
+		}
+	}
+	while (answer!=theRandomNumber);
+	repeat=+prompt("Вы выиграли, угадав число "+theRandomNumber+" с "+tryCount+" попытки.\nДля завершения нажмите 0.");
+	tryCount=0;
+}
+
+alert("Игра окончена");
+
+
+
+/* Самостоятельно разобраться с атрибутами тега script (async и defer).
+*/
+</script> 

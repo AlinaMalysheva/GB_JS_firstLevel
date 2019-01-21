@@ -1,0 +1,74 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+//проверка ввода цифр
+function testCorrectEnter(answer){
+	while (isNaN(answer)){
+		answer=+prompt("Введите цифрами.");
+	}
+	return answer;
+}
+
+//степень
+function power(val,pow){
+	if(pow==1) {
+		return val;
+	}
+	else {
+		pow=pow-1;
+		val= val*power(val,pow);
+		return val;
+	}
+}
+
+function add(a,b){
+	return a+b;
+}
+
+function minus(a,b){
+	return a-b;
+}
+
+function divide(a,b){
+	return a/b;
+}
+
+function multiply(a,b){
+	return a*b;
+}
+
+function mathOperation(a, b, operation){
+	switch(operation){
+		case ('+'):
+			itog = add(a,b);
+			break;
+		case ('-'):
+			itog = minus(a,b);
+			break;
+		case ('*'):
+			itog = multiply(a,b);
+			break;
+		case ('/'):
+			itog = divide(a,b);
+			break;
+		case('^'):
+			itog = power(a,b);
+		default:
+			itog="\nИ это значит, что вместо действия Вы ввели какую-то ерунду";
+	}
+	return itog;
+}
+
+var a=+prompt("Это неудобный калькулятор.\nПридумайте, что Вы хотите посчитать.\nВведите первое число:");
+	a=testCorrectEnter(a);
+var b=+prompt("Введите второе число:");
+	b=testCorrectEnter(b);
+var operation=prompt("Укажите, что Вы хотите скалькулировать:\n+ сложить\n- отнять\n* умножить\n/ разделить\n^ возвести в степень");
+
+
+var itog = mathOperation(a,b,operation);
+alert("Вы ввели следующие значения: "+ 
+	  a + operation + b + " = " + itog);
+
+
+</script> 
