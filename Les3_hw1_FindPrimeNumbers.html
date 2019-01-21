@@ -1,0 +1,47 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+//С помощью цикла while вывести все простые числа в промежутке от 0 до 100.
+
+
+var sieveEratosthenes = [];
+for ( i = 3; i < 101; i++) {
+	sieveEratosthenes.push(i);
+}
+
+//делю на 2. Все, что делится, из массива удаляю. Потом начинаю делить на первое число из массива, на которое еще не делили.
+
+var divider = 2;
+while ( divider < 97 ) {  
+	
+	var i = 0;
+	while ( i < sieveEratosthenes.length) {
+	
+		if ( ( sieveEratosthenes[i] !== divider ) && ( sieveEratosthenes[i] % divider == 0 ) ) {
+			delete sieveEratosthenes[i];
+		}
+		i++;
+	}
+	
+	var i = 0;
+	while ( i < sieveEratosthenes.length) {
+		if ( isNaN(sieveEratosthenes[i] ) || sieveEratosthenes[i]<=divider ) {
+			i++;
+			continue;
+		}
+		divider = sieveEratosthenes[i];
+		break;
+	}
+}
+
+i = 0;
+var primeNumb = [];
+while ( i < sieveEratosthenes.length ) {
+	if ( sieveEratosthenes[i] ) {
+		primeNumb.push( sieveEratosthenes[i] );
+	}
+	i++;
+}
+document.write ( "Mассив простых чисел от 0 до 100: \n 0 (тут ещё спорят, как я понимаю), 1," + primeNumb);
+
+</script>
