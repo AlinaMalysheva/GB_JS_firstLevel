@@ -1,0 +1,55 @@
+
+.chessCellHeader {
+  width: 60px;
+  height: 60px;
+  border: 1px solid black;
+  background-color: grey;
+  text-align: center;
+  line-height: 60px;
+  float: left;
+}
+
+.chessCellNumber {
+  width: 60px;
+  height: 60px;
+  border: 1px solid black;
+  background-color: grey;
+  text-align: center;
+  line-height: 60px;
+  }
+
+.chessCellWhite {
+  width: 60px;
+  height: 60px;
+  border: 1px solid black;
+  background-color: white;
+  text-align: center;
+  line-height: 60px;
+  float: left;
+}
+
+.chessCellBlack {
+  width: 60px;
+  height: 60px;
+  border: 1px solid black;
+  background-color: black;
+  text-align: center;
+  line-height: 60px;
+  float: left;
+}
+
+#thePlace {
+  width: 60px;
+  height: 540px;
+  margin-bottom: 60px;
+  float: left;
+
+  
+}
+
+#theBoardPlace{
+   width: 540px;
+  height: 540px;
+ margin-left: 60px;
+ 
+}
